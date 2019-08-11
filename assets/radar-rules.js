@@ -57,7 +57,7 @@
                 docs: 'https://docs.rsshub.app/social-media.html#%E5%BE%AE%E5%8D%9A',
                 source: ['/u/:id', '/:id'],
                 target: '/weibo/user/:uid',
-                script: "({uid: document.querySelector('head').innerHTML.match(/\\$CONFIG\\['uid']='(\\d+)'/)[1]})",
+                script: "({uid: document.querySelector('head').innerHTML.match(/\\$CONFIG\\['oid']='(\\d+)'/)[1]})",
                 verification: (params) => params.uid,
             },
         ],
@@ -327,6 +327,26 @@
                 source: '/:type/:id',
                 target: '/ximalaya/album/:id/',
                 verification: (params) => parseInt(params.id) + '' === params.id,
+            },
+        ],
+    },
+    'algocasts.io': {
+        _name: 'AlgoCasts',
+        '.': [
+            {
+                title: '视频更新',
+                docs: 'https://docs.rsshub.app/programming.html#algocasts',
+                source: '/episodes',
+                target: '/algocasts',
+            },
+        ],
+    },
+    'soulapp.cn': {
+        _name: 'Soul',
+        '.': [
+            {
+                title: '瞬间更新',
+                docs: 'https://docs.rsshub.app/social-media.html#soul',
             },
         ],
     },
